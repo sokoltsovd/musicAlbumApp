@@ -1,9 +1,4 @@
-//
-//  AlbumsViewController.swift
-//  Itunes_testTask_youTube
-//
-//  Created by Сергей Горбачёв on 07.10.2021.
-//
+
 
 import UIKit
 
@@ -110,6 +105,13 @@ extension AlbumsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailAlbumViewController = DetailAlbumViewController()
+        
+        let albums = albums[indexPath.row]
+        
+        detailAlbumViewController.album = albums
+        
+        detailAlbumViewController.title = albums.artistName
+        
         navigationController?.pushViewController(detailAlbumViewController, animated: true)
     }
 }

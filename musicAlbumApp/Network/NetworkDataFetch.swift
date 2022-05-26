@@ -23,6 +23,24 @@ class NetworkDataFetch {
             }
         }
     }
+    
+    func fetchSong(urlString: String, responce: @escaping (SongsModel?,Error?) -> Void) {
+        
+        NetwotkRequest.shared.requestData(urlString: urlString) { result in
+            switch result {
+            case .success(let data):
+                do {
+                    let albums = try JSONDecoder().decode(SongsModel.self, from: data)
+                    responce(albums, nil)
+                } catch let jsonError {
+                    print("Failed to decode Json",jsonError)
+                }
+            case .failure(let error):
+                print("error \(error.localizedDescription)")
+                responce(nil,error)
+            }
+        }
+    }
 }
 
 

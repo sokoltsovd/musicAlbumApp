@@ -1,9 +1,3 @@
-//
-//  AlbumTableViewCell.swift
-//  Itunes_testTask_youTube
-//
-//  Created by Сергей Горбачёв on 07.10.2021.
-//
 
 import UIKit
 
@@ -76,7 +70,7 @@ class AlbumsTableViewCell: UITableViewCell {
     
     func configureAlbumCell(album: Album) {
         
-        if let urlString = album.artworkUrl60 {
+        if let urlString = album.artworkUrl100 {
             NetwotkRequest.shared.requestData(urlString: urlString) { [weak self] result in
                 switch result {
                     

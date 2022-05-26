@@ -1,9 +1,3 @@
-//
-//  SongsCollectionViewCell.swift
-//  Itunes_testTask_youTube
-//
-//  Created by Сергей Горбачёв on 07.10.2021.
-//
 
 import UIKit
 
